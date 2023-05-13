@@ -17,7 +17,6 @@ use YaangVu\Exceptions\SystemException;
 
 class S3Service
 {
-
     /**
      * AWS version
      *
