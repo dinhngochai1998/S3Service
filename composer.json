@@ -16,5 +16,11 @@
             "name": "haidn",
             "email": "dinhngochai1900@gmail.com"
         }
+    ],
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "git@github.com:dinhngochai1998/S3Service.git"
+        }
     ]
 }
