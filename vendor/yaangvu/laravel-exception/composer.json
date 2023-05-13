@@ -1,0 +1,27 @@
+{
+  "name": "yaangvu/laravel-exception",
+  "description": "Laravel YaangVu Base Exception",
+  "keywords": [
+    "laravel",
+    "lumen",
+    "base",
+    "toprate",
+    "exception"
+  ],
+  "license": "MIT",
+  "require": {
+    "illuminate/http": "^7|^8|^9"
+  },
+  "authors": [
+    {
+      "name": "Yaang Vu",
+      "email": "yaangvu@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "YaangVu\\Exceptions\\": "src/"
+    }
+  }
+}
