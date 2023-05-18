@@ -1,6 +1,6 @@
 {
-    "name": "toprate/laravel-login",
-    "description": "saejan aws s3 support ",
+    "name": "aws/laravel-package",
+    "description": "saejan aws s3 support",
     "require": {
         "php": "^8.0|^8.1",
         "aws/aws-sdk-php": "^3.183",
