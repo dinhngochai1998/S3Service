@@ -8,6 +8,7 @@ use Aws\S3\Exception\S3Exception;
 use Aws\S3\S3Client;
 use Aws\Sts\StsClient;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
 use stdClass;
@@ -293,5 +294,19 @@ class S3Service
         } catch (AwsException | Exception $awsException) {
             throw new SystemException($awsException->getMessage() ?? __('system-500'), $awsException);
         }
+    }
+
+    public function uploadFile($file, $filePath, $disk = 's3'): string
+    {
+        if(!$file) {
+            if (empty($url)) {
+                throw new BadRequestException([__("required", ['attribute' => 'fileS3'])], new Exception());
+            }
+        }
+        Storage::disk($disk)->put($filePath, file_get_contents($file)); // save file to s3
+        $urlImage = Storage::cloud()->url($filePath); // get url s3 bucket
+
+//      $presigned = $this->createPreSigned($b); // tao 1 presigned de phblic file
+        return $urlImage;
     }
 }
